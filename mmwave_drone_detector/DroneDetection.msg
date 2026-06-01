@@ -1,0 +1,14 @@
+# DroneDetection.msg
+std_msgs/Header header
+uint32 drone_id
+geometry_msgs/Point position
+geometry_msgs/Vector3 velocity
+float32 speed
+float32 range
+float32 azimuth_deg
+float32 elevation_deg
+float32 confidence
+uint32 point_count
+float32 snr_mean
+float32 doppler_mean
+bool is_approaching

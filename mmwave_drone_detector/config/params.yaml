@@ -1,0 +1,27 @@
+mmwave_drone_detector:
+  ros__parameters:
+    cli_port: "/dev/ttyUSB0"
+    data_port: "/dev/ttyUSB1"
+    cfg_path: ""
+    sensor_frame_id: "radar"
+
+    # Very relaxed for testing — tighten once you have real drone data
+    min_snr_db: 4.0
+    min_range_m: 0.3
+    max_range_m: 8.0
+    max_azimuth_deg: 65.0
+    min_height_m: -5.0        # no height filter for bench testing
+    max_height_m: 10.0
+    min_doppler_ms: 0.05      # almost any movement counts
+
+    min_cluster_points: 1     # even single points reported
+    max_cluster_dist_m: 1.5
+    min_confidence: 0.1       # very low threshold
+
+    velocity_alpha: 0.4
+    position_alpha: 0.6
+
+    topic_pointcloud: "/radar/point_cloud"
+    topic_detections: "/radar/drone_detections"
+    topic_pose:       "/radar/drone_pose"
+    topic_velocity:   "/radar/drone_velocity"
